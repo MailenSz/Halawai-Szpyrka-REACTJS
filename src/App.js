@@ -1,7 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import Title from './Components/Title';
-
+import Initial from './Components/Initial';
 
 function App() {
   return (
