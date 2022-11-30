@@ -1,5 +1,5 @@
 import React from 'react';
-/* import './CartWidget/CartWidget'; */
+
 
 const CartWidget = () =>{
     return <div>
@@ -21,6 +21,7 @@ const CartWidget = () =>{
             c-0.552,0-1,0.448-1,1s0.448,1,1,1c0,0,0,0,0,0l0,4l0,0c0,0,0,0,0,0c-0.552,0-1,0.448-1,1c0,0.322,0.162,0.596,0.399,0.779
             C56.866,38.514,56.003,38.994,55.024,38.994z"/>
                 </svg>
+                <span>3</span>
             </div>;
 };
 

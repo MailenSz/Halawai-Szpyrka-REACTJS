@@ -1,25 +1,30 @@
 import logo from './logo.svg';
 import './App.css';
-import Title from './Components/Title';
-import Initial from './Components/Initial';
+import './Components/Title';
+import './Components/Initial';
+import './Components/NavBar';
+import './Components/List';
+import './Components/Layout';
+import './Components/ItemListContainer/ItemListContainer';
+import './Components/CartWidget';
+
+
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <Title />
+        <Initial />
+        <NavBar />
+        <ItemListContainer />
+        <CartWidget />
+        <List />
+        <Layout />
         <img src={logo} className="App-logo" alt="logo" />
-        <p>
+        <h2>
           HALAWAI BAR and GRILL
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+        </h2>
       </header>
     </div>
   );
