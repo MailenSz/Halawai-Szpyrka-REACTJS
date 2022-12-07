@@ -1,8 +1,9 @@
 import PropTypes from 'prop-types';
+import { Link } from 'react-router-dom';
 import './NavBar';
 import '../CartWidget/CartWidget'
 
-const NavBar = ({menus, children}) =>{
+const NavBar = ({menus, children, categorias}) =>{
     return(
         <div className='navbar'>
             <div className='navbar__menus'>
@@ -11,6 +12,11 @@ const NavBar = ({menus, children}) =>{
                         return <a href='cerveza artesanal' className='navbar__menu'>{menu}</a>
                     })
                 }
+            </div>ç
+            <div>
+                    categorias.map((categoria) => {
+                        return<Link to={`/category/${categorias.id}`}>{categoria.name}</Link>
+                    })
             </div>
 
             <div>
