@@ -1,9 +1,11 @@
+import { Link } from 'react-router-dom';
+
 const Item=({producto})=>{
     return(
         <div>
             <div>
                 <img src={producto.img} />
-                <p>{producto.name}</p>
+                <Link to = {`/item/${producto.id}`}></Link><p>{producto.name}</p>
             </div>                            
         </div>
     )

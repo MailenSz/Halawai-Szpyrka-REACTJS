@@ -1,17 +1,37 @@
 import {BrowserRouter, Routes, Route} from 'react-router-dom';
 import Layout from '../../Components/Layout';
-import NavBar from '../../Components/NavBar';
+import NavBar from '../../Components/NavBar/NavBar';
 import CartWidget from '../../Components/CartWidget';
 import List from '../../Components/List'
 import ItemListContainer from '../../Components/ItemListContainer/ItemListContainer';
+import ItemDetailContainer from '../../ItemDetailContainer/ItemDetailContainer';
+import ItemDetail from '../../ItemDetail/ItemDetail';
 import {useState,useEffect} from 'react'
 import axios from 'axios';
 import {categorias, menus} from '../../mock'
-
+import Home from '../../Components/Home/Home';
+import Productos from '../../Components/Productos/Productos';
+import Contacto from '../../Components/Contacto/Contacto';
 
 const Initial =() =>{
-/*     const Menus = ['INICIO','PRODUCTOS','CONTACTO']
 
+    const menus = [{
+        name:'INICIO',
+        href:'/'
+    },
+    {
+        name:'PRODUCTOS',
+        href:'/Productos'
+    },
+    {
+        name:'CONTACTO',
+        href:'/Contacto'
+    },
+/*     {
+        name:'detalle del Producto',
+        href:'/detalleProducto'
+    } */]
+/*     
     const categorias = [
             {
                 name: 'Cervezas artesanales',
@@ -64,15 +84,19 @@ const Initial =() =>{
     return(
         <BrowserRouter className="initialApp">
             <Layout>
-                <NavBar menus={Menus} categorias={categorias}> 
+                <NavBar menus={menus} categorias={categorias}> 
                     <button>Carrito de Compras</button>
                     <CartWidget />
                 </NavBar>
 
-            <Routes>
-                <Route exact path='/' element={<ItemListContainer />}/>
-                <Route exact path='/categoy/:id' element={<ItemListContainer />}/>
-            </Routes>
+                <Routes>
+                    <Route exact path='/' element={<Home />}/>
+                    <Route exact path='/productos' element={<Productos />}/>
+                    <Route exact path='/contacto' element={<Contacto />}/>
+                    <Route exact path='/categoy/:id' element={<ItemListContainer />}/>
+                    <Route exact path='/item/:id' element={<ItemDetailContainer />}/>
+                    <Route exact path='//detalleProducto/:idProducto' element={<ItemDetail />}/>
+                </Routes>
 
                 <ItemListContainer name='Thelma' />
                 <div className='cervezasArtesanales'><List listas={Productos}/></div>
@@ -101,7 +125,7 @@ const Initial =() =>{
                 </div>
             </Layout>
         </BrowserRouter>
-    )
+    );
 }
 
 export default Initial;

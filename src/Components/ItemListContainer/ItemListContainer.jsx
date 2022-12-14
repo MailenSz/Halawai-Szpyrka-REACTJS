@@ -1,7 +1,11 @@
-import React, { useEffect } from 'react';
 import { useState } from 'react';
-import Item from '../Item/Item';
 import {Productos, categorias} from '../../mock';
+import Item from '../Item/Item';
+import { useParams } from 'react-router-dom';
+import { useEffect } from 'react';
+
+
+
 
 const ItemListContainer = () =>{
     const [item,setItem] = useState(Productos);
@@ -9,14 +13,16 @@ const ItemListContainer = () =>{
 
     const FilterCategory = new Promise((resolve, reject) => {
         setTimeout(()=>{
-            resolve("responde"+id)
+            let newProductos = Productos.filter((p) => p.category == id)
+            resolve(newProductos)
         },3000)
         
     })
 
     useEffect(()=>{
         FilterCategory.then((response)=>{
-            console.log(response)
+            setItem(response)
+            console.log(response,item)
         })
     },[id])
 
